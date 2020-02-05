@@ -12,6 +12,8 @@ export const HelloWorld: React.FC = () => {
 	)
 }
 
+export default HelloWorld
+
 // const HelloWorld = () => {
 // 	return React.createElement("div", {children: "Hello World"})
 // }
