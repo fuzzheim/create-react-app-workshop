@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Controls from "./Controls"
 import Display from "./Display"
+import ControlToggle from "./ControlToggle"
 
 export const CounterTree: React.FC = () => {
 	const [ count, setcount ] = useState(0)
@@ -27,9 +28,7 @@ export const CounterTree: React.FC = () => {
 					canDecrement={count <= 0}
 				/>
 			)}
-			<button className="btn btn-secondary" type="button" onClick={toggleControls}>
-				Toggle controls
-			</button>
+			<ControlToggle onToggle={toggleControls} />
 		</div>
 	)
 }
