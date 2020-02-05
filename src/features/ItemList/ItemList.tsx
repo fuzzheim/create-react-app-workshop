@@ -1,10 +1,8 @@
 import React from "react"
+import { IListItem } from "./IListItem"
 
 interface IItemListProps {
-	items: Array<{
-		id: string | number
-		text: string
-	}>
+	items: IListItem[]
 }
 
 export const ItemList: React.FC<IItemListProps> = ({ items = [] }) => {

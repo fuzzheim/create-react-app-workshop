@@ -13,6 +13,11 @@ const LINKS: ILink[] = [
 		id: "counter",
 		path: "/counter",
 		text: "Counter"
+	},
+	{
+		id: "itemList",
+		path: "/list",
+		text: "Item List"
 	}
 ]
 
