@@ -2,7 +2,7 @@ import React from "react"
 
 interface IItemListProps {
 	items: Array<{
-		id: string
+		id: string | number
 		text: string
 	}>
 }

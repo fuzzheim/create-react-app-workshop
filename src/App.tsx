@@ -1,11 +1,11 @@
 import React from "react"
-import HelloWorld from "features/HelloWorld"
+import ItemList, { ITEM_LIST_DATA } from "features/ItemList"
 
 const App: React.FC = () => {
 	return (
 		<div>
 			<h1>React workshop</h1>
-			<HelloWorld />
+			<ItemList items={ITEM_LIST_DATA} />
 		</div>
 	)
 }
