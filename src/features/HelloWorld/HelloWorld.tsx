@@ -15,5 +15,8 @@ export const HelloWorld: React.FC = () => {
 export default HelloWorld
 
 // const HelloWorld = () => {
+// 	return (<div>Hello World</div>)
+// }
+// const HelloWorld = () => {
 // 	return React.createElement("div", {children: "Hello World"})
 // }

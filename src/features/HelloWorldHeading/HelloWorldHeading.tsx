@@ -12,7 +12,7 @@ export const HelloWorldHeading: React.FC = () => {
 			<h1>{showHeading && "Hello World"}</h1>
 			<button
 				onClick={() => {
-					setShowHeading(true)
+					setShowHeading(!showHeading)
 				}}
 			>
 				Click me
