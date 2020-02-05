@@ -26,7 +26,7 @@ export const Counter: React.FC<ICounterProps> = ({ initialCount }) => {
 					</button>
 				</React.Fragment>
 			)}
-			<button type="button" onClick={() => setcontrolsVisible(!controlsVisible)}>
+			<button className="btn btn-danger" type="button" onClick={() => setcontrolsVisible(!controlsVisible)}>
 				Toggle controls
 			</button>
 		</div>

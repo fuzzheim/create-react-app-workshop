@@ -1,12 +1,28 @@
 import React from "react"
-import ItemList, { ITEM_LIST_DATA } from "features/ItemList"
+import { BrowserRouter } from "react-router-dom"
+import Router from "features/Router"
+import Nav, { ILink } from "features/Nav"
+
+const LINKS: ILink[] = [
+	{
+		id: "home",
+		path: "/",
+		text: "Home"
+	},
+	{
+		id: "counter",
+		path: "/counter",
+		text: "Counter"
+	}
+]
 
 const App: React.FC = () => {
 	return (
-		<div>
+		<BrowserRouter>
 			<h1>React workshop</h1>
-			<ItemList items={ITEM_LIST_DATA} />
-		</div>
+			<Nav links={LINKS} />
+			<Router />
+		</BrowserRouter>
 	)
 }
 
