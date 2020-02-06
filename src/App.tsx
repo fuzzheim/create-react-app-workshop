@@ -23,6 +23,11 @@ const LINKS: ILink[] = [
 		id: "tree",
 		path: "/tree",
 		text: "Counter Tree"
+	},
+	{
+		id: "cond",
+		path: "/cond",
+		text: "Conditional Counter Tree"
 	}
 ]
 

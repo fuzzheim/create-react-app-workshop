@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom"
 import HelloWorld from "features/HelloWorld"
 import Counter from "features/Counter"
 import ItemList, { ITEM_LIST_DATA } from "features/ItemList"
+import ConditionalChildren from "features/ConditionalChildren"
 
 const CounterTree = React.lazy(() => import("features/CounterTree"))
 
@@ -13,7 +14,7 @@ export const Router: React.FC = () => {
 				<Route exact path="/">
 					<HelloWorld />
 				</Route>
-				<Route exact path="/counter">
+				<Route exact path="/counter/:initialCount?">
 					<Counter />
 				</Route>
 				<Route exact path="/tree">
@@ -21,6 +22,11 @@ export const Router: React.FC = () => {
 				</Route>
 				<Route exact path="/list">
 					<ItemList items={ITEM_LIST_DATA} />
+				</Route>
+				<Route exact path="/cond">
+					<ConditionalChildren>
+						<CounterTree />
+					</ConditionalChildren>
 				</Route>
 			</Switch>
 		</Suspense>
