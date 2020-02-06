@@ -29,10 +29,29 @@ export const EditableItemList: React.FC = () => {
 		}
 	}
 
+	const deleteItemHandler = (index: number) => () => {
+		const newItems = items.slice()
+		newItems.splice(index, 1)
+		setItems(newItems)
+	}
+	const itemChangeHandler = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
+		const newItems = items.slice()
+		const item = newItems[index]
+		item.text = event.target.value
+		setItems(newItems)
+	}
+
 	return (
 		<div>
 			<input type="text" value={newItemText} onChange={inputChangeHandler} onKeyUp={inputKeyUpHandler} />
-			<ul>{items.map((item) => <li key={item.id}>{item.text}</li>)}</ul>
+			<ul>
+				{items.map((item, index) => (
+					<li key={item.id}>
+						<input type="text" value={item.text} onChange={itemChangeHandler(index)} />
+						<button onClick={deleteItemHandler(index)}>X</button>
+					</li>
+				))}
+			</ul>
 		</div>
 	)
 }
