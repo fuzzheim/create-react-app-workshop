@@ -33,6 +33,11 @@ const LINKS: ILink[] = [
 		id: "editable",
 		path: "/editable",
 		text: "Editable List"
+	},
+	{
+		id: "displayList",
+		path: "/displayList",
+		text: "DisplayList"
 	}
 ]
 

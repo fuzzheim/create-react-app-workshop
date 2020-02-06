@@ -5,6 +5,8 @@ import Counter from "features/Counter"
 import ItemList, { ITEM_LIST_DATA } from "features/ItemList"
 import ConditionalChildren from "features/ConditionalChildren"
 import EditableItemList from "features/EditableItemList"
+import DisplayList from "features/DisplayList"
+import CenteredContent from "features/CenteredContent"
 
 const CounterTree = React.lazy(() => import("features/CounterTree"))
 
@@ -26,6 +28,11 @@ export const Router: React.FC = () => {
 				</Route>
 				<Route exact path="/editable">
 					<EditableItemList />
+				</Route>
+				<Route exact path="/displayList">
+					<CenteredContent>
+						<DisplayList />
+					</CenteredContent>
 				</Route>
 				<Route exact path="/cond">
 					<ConditionalChildren>
