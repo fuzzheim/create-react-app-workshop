@@ -29,6 +29,13 @@ export const DisplayList: React.FC = () => {
 		return false
 	})
 
+	useEffect(
+		() => {
+			document.title = `Searching for: "${searchText}" (hits: ${filteredList.length})`
+		},
+		[ searchText, filteredList ]
+	)
+
 	return (
 		<React.Fragment>
 			{isLoading && (
