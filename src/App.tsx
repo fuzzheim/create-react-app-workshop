@@ -28,6 +28,11 @@ const LINKS: ILink[] = [
 		id: "cond",
 		path: "/cond",
 		text: "Conditional Counter Tree"
+	},
+	{
+		id: "editable",
+		path: "/editable",
+		text: "Editable List"
 	}
 ]
 

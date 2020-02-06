@@ -4,6 +4,7 @@ import HelloWorld from "features/HelloWorld"
 import Counter from "features/Counter"
 import ItemList, { ITEM_LIST_DATA } from "features/ItemList"
 import ConditionalChildren from "features/ConditionalChildren"
+import EditableItemList from "features/EditableItemList"
 
 const CounterTree = React.lazy(() => import("features/CounterTree"))
 
@@ -22,6 +23,9 @@ export const Router: React.FC = () => {
 				</Route>
 				<Route exact path="/list">
 					<ItemList items={ITEM_LIST_DATA} />
+				</Route>
+				<Route exact path="/editable">
+					<EditableItemList />
 				</Route>
 				<Route exact path="/cond">
 					<ConditionalChildren>
