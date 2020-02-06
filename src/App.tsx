@@ -8,9 +8,12 @@ import CounterTree from "features/CounterTree"
 import ItemList from "features/ItemList"
 import { ITEM_LIST_DATA } from "features/ItemList/ITEM_LIST_DATA"
 import HelloWorld from "features/HelloWorld"
+import EditableItemList from "features/EditableItemList"
 
 const App = () => (
 	<div className="App">
+		<EditableItemList />
+
 		<HelloWorld />
 		<HelloWorldHeading />
 		<Incrementor />
