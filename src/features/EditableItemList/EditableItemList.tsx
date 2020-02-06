@@ -27,14 +27,12 @@ export const EditableItemList: React.FC = () => {
 			setnewItem("")
 		}
 	}
-	const onItemDelete = (itemId: number) => () => {
-		const itemIndex = items.findIndex((item) => item.id === itemId)
+	const onItemDelete = (itemIndex: number) => () => {
 		const newItems = items.slice()
 		newItems.splice(itemIndex, 1)
 		setitems(newItems)
 	}
-	const onItemChange = (itemId: number) => (evt: React.ChangeEvent<HTMLInputElement>) => {
-		const itemIndex = items.findIndex((item) => item.id === itemId)
+	const onItemChange = (itemIndex: number) => (evt: React.ChangeEvent<HTMLInputElement>) => {
 		const newItems = items.slice()
 		newItems.splice(itemIndex, 1, {
 			...newItems[itemIndex],
@@ -61,10 +59,10 @@ export const EditableItemList: React.FC = () => {
 				/>
 			</div>
 			<ul className="list-group">
-				{items.map((item) => (
+				{items.map((item, index) => (
 					<li key={item.id} className="list-group-item">
-						<input type="text" value={item.text} onChange={onItemChange(item.id)} />
-						<button type="button" onClick={onItemDelete(item.id)}>
+						<input type="text" value={item.text} onChange={onItemChange(index)} />
+						<button type="button" onClick={onItemDelete(index)}>
 							X
 						</button>
 					</li>
