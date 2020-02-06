@@ -1,17 +1,18 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import Controls from "./Controls"
 import Display from "./Display"
 import ControlToggle from "./ControlToggle"
+import { CounterContext } from "features/CounterContext"
 
 export const CounterTreeWithContext: React.FC = () => {
-	const [ count, setcount ] = useState(0)
+	const { count, setCount } = useContext(CounterContext)
 	const [ showControls, setshowControls ] = useState(true)
 
 	const onIncrement = () => {
-		setcount(count + 1)
+		setCount(count + 1)
 	}
 	const onDecrement = () => {
-		setcount(count - 1)
+		setCount(count - 1)
 	}
 	const toggleControls = () => {
 		setshowControls(!showControls)

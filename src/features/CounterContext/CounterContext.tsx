@@ -5,12 +5,11 @@ interface ICounterContextValue {
 	setCount: (newCount: number) => any
 }
 
-const CounterContext = React.createContext<ICounterContextValue>({
+export const CounterContext = React.createContext<ICounterContextValue>({
 	count: 0,
 	setCount: () => {}
 })
 CounterContext.displayName = "CounterContext"
-export const CounterContextConsumer = CounterContext.Consumer
 
 export const CounterContextProvider: React.FC = (children) => {
 	const [ count, setCount ] = useState(0)
