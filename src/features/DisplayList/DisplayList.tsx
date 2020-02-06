@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { DISPLAY_LIST_DATA, IDisplayListData } from "./DISPLAY_LIST_DATA"
 
@@ -20,6 +20,13 @@ const filterBySearchText = (searchText: string) => {
 
 export const DisplayList: React.FC<IDisplayListProps> = ({ searchText = "" }) => {
 	const filteredData = DISPLAY_LIST_DATA.filter(filterBySearchText(searchText))
+
+	// useEffect(
+	// 	() => {
+	// 		document.title = `Searcing for user "${searchText}" (${filteredList.length})`
+	// 	},
+	// 	[ searchText, filteredList ]
+	// )
 
 	return (
 		<table className="table">
