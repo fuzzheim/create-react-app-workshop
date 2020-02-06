@@ -9,9 +9,11 @@ import ItemList from "features/ItemList"
 import { ITEM_LIST_DATA } from "features/ItemList/ITEM_LIST_DATA"
 import HelloWorld from "features/HelloWorld"
 import EditableItemList from "features/EditableItemList"
+import DisplayList from "features/DisplayList"
 
 const App = () => (
 	<div className="App">
+		<DisplayList />
 		<EditableItemList />
 
 		<HelloWorld />
