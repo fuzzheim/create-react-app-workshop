@@ -12,26 +12,35 @@ import EditableItemList from "features/EditableItemList"
 import DisplayList from "features/DisplayList"
 import ConditionalChildren from "features/ConditionalChildren"
 import CenteredContent from "features/CenteredContent"
+import CounterContextProvider from "features/CounterContext"
 
 const App = () => (
 	<div className="App">
-		<CenteredContent>
-			<ConditionalChildren>
-				<DisplayList />
-			</ConditionalChildren>
-		</CenteredContent>
-		<EditableItemList />
+		<CounterContextProvider>
+			<CenteredContent>
+				<ConditionalChildren>
+					<DisplayList />
+				</ConditionalChildren>
+			</CenteredContent>
+			<EditableItemList />
 
-		<HelloWorld />
-		<HelloWorldHeading />
-		<Incrementor />
-		<Counter
-			initialValue={5}
-			alertCount={(newCount) => {
-				alert(newCount)
-			}}
-		/>
-		<CounterTree initialValue={3} />
+			<HelloWorld />
+			<HelloWorldHeading />
+			<Incrementor />
+			<hr />
+			<CenteredContent>
+				<ConditionalChildren>
+					<Counter
+						initialValue={5}
+						alertCount={(newCount) => {
+							alert(newCount)
+						}}
+					/>
+					<CounterTree initialValue={3} />
+				</ConditionalChildren>
+			</CenteredContent>
+			<hr />
+		</CounterContextProvider>
 		<ItemList items={ITEM_LIST_DATA} />
 	</div>
 )

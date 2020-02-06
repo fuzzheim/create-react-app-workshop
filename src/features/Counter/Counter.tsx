@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { CounterContext } from "features/CounterContext"
 
 interface ICounterProps {
 	/**
@@ -11,7 +12,8 @@ interface ICounterProps {
 
 // export const Counter: React.FC<ICounterProps> = ({ initialValue = 0 }) => {
 export const Counter: React.FC<ICounterProps> = (props) => {
-	const [ count, setCount ] = useState(props.initialValue || 0)
+	const { count, setCount } = useContext(CounterContext)
+	// const [ count, setCount ] = useState(props.initialValue || 0)
 	// const [ count, setCount ] = useState(initialValue)
 	const [ showControls, setShowControls ] = useState(true)
 
