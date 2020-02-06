@@ -11,12 +11,15 @@ import HelloWorld from "features/HelloWorld"
 import EditableItemList from "features/EditableItemList"
 import DisplayList from "features/DisplayList"
 import ConditionalChildren from "features/ConditionalChildren"
+import CenteredContent from "features/CenteredContent"
 
 const App = () => (
 	<div className="App">
-		<ConditionalChildren>
-			<DisplayList />
-		</ConditionalChildren>
+		<CenteredContent>
+			<ConditionalChildren>
+				<DisplayList />
+			</ConditionalChildren>
+		</CenteredContent>
 		<EditableItemList />
 
 		<HelloWorld />

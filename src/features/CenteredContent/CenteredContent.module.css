@@ -1,0 +1,9 @@
+.centeredContent {
+	display: flex;
+	padding: 0 12px;
+	justify-content: center;
+}
+
+.centeredContent>div {
+	flex: 0 1 600px;
+}
