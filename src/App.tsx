@@ -9,22 +9,20 @@ import ItemList from "features/ItemList"
 import { ITEM_LIST_DATA } from "features/ItemList/ITEM_LIST_DATA"
 import HelloWorld from "features/HelloWorld"
 
-const App = () => {
-	return (
-		<div className="App">
-			<HelloWorld />
-			<HelloWorldHeading />
-			<Incrementor />
-			<Counter
-				initialValue={5}
-				alertCount={(newCount) => {
-					alert(newCount)
-				}}
-			/>
-			<CounterTree initialValue={3} />
-			<ItemList items={ITEM_LIST_DATA} />
-		</div>
-	)
-}
+const App = () => (
+	<div className="App">
+		<HelloWorld />
+		<HelloWorldHeading />
+		<Incrementor />
+		<Counter
+			initialValue={5}
+			alertCount={(newCount) => {
+				alert(newCount)
+			}}
+		/>
+		<CounterTree initialValue={3} />
+		<ItemList items={ITEM_LIST_DATA} />
+	</div>
+)
 
 export default App
