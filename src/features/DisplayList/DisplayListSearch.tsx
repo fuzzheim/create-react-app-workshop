@@ -2,33 +2,15 @@ import React from "react"
 
 interface IDisplayListSearchProps {
 	searchText: string
-	onChange: (newSearchText: string) => void
+	onSearchTextChange: (newSearchText: string) => any
 }
 
-export const DisplayListSearch: React.FC<IDisplayListSearchProps> = ({ searchText, onChange }) => {
-	const onInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-		onChange(evt.target.value)
+export const DisplayListSearch: React.FC<IDisplayListSearchProps> = ({ searchText, onSearchTextChange }) => {
+	const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		onSearchTextChange(event.target.value)
+		document.title = searchText
 	}
-
-	return (
-		<div>
-			<div className="input-group mb-3">
-				<div className="input-group-prepend">
-					<span className="input-group-text" id="search-text">
-						Search
-					</span>
-				</div>
-				<input
-					type="text"
-					className="form-control"
-					id="basic-url"
-					aria-describedby="search-text"
-					value={searchText}
-					onChange={onInputChange}
-				/>
-			</div>
-		</div>
-	)
+	return <input className="DisplayListSearch width-100" type="text" placeholder="Search for users" value={searchText} onChange={onChange} />
 }
 
 export default DisplayListSearch

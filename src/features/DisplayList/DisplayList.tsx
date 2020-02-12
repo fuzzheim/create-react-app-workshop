@@ -1,45 +1,53 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
+import DisplayListTable from "./DisplayListTable"
+import DisplayListSearch from "./DisplayListSearch"
+import { IDisplayListUser } from "./IDisplayListUser"
+import "./DisplayList.css"
 
-import { DISPLAY_LIST_DATA, IDisplayListData } from "./DISPLAY_LIST_DATA"
+import { fetchUsers } from "../../api/fetchUsers"
 
-interface IDisplayListProps {
-	searchText?: string
+const getUserList = async (setter: (users: IDisplayListUser[]) => any, clearLoading: () => any) => {
+	const users = await fetchUsers()
+	setter(users)
+	clearLoading()
 }
 
-const filterBySearchText = (searchText: string) => {
+export const DisplayList: React.FC = () => {
+	const [ searchText, setSearchText ] = useState("")
+	const [ users, setUsers ] = useState<IDisplayListUser[]>([])
+	const [ isLoading, setIsLoading ] = useState(true)
+
+	useEffect(() => {
+		getUserList(setUsers, () => setIsLoading(false))
+	}, [])
+
 	const normalizedSearchText = searchText.trim().toLocaleLowerCase()
-	return (data: IDisplayListData): boolean => {
+	const filteredList = users.filter((user) => {
 		if (normalizedSearchText === "") return true
-		if (data.name.toLocaleLowerCase().indexOf(normalizedSearchText) >= 0) return true
-		if (data.username.toLocaleLowerCase().indexOf(normalizedSearchText) >= 0) return true
-		if (data.email.toLocaleLowerCase().indexOf(normalizedSearchText) >= 0) return true
-
+		if (user.name.toLocaleLowerCase().indexOf(normalizedSearchText) >= 0) return true
+		if (user.username.toLocaleLowerCase().indexOf(normalizedSearchText) >= 0) return true
+		if (user.email.toLocaleLowerCase().indexOf(normalizedSearchText) >= 0) return true
 		return false
-	}
-}
+	})
 
-export const DisplayList: React.FC<IDisplayListProps> = ({ searchText = "" }) => {
-	const filteredData = DISPLAY_LIST_DATA.filter(filterBySearchText(searchText))
-
+	useEffect(() => {
+		document.title = `Searching for "${searchText}" (hits: ${filteredList.length})`
+	}, [searchText, filteredList])
 	return (
-		<table className="table">
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Name</th>
-					<th>Email</th>
-				</tr>
-			</thead>
-			<tbody>
-				{filteredData.map((user) => (
-					<tr key={user.id}>
-						<td>{user.id}</td>
-						<td>{user.name}</td>
-						<td>{user.email}</td>
-					</tr>
-				))}
-			</tbody>
-		</table>
+		<React.Fragment>
+			{isLoading && (
+				<p>
+					<strong>Loading data...</strong>
+				</p>
+			)}
+			{!isLoading && (
+				<div className="DisplayList-wrapper">
+					<h1>DisplayList</h1>
+					<DisplayListSearch searchText={searchText} onSearchTextChange={setSearchText} />
+					<DisplayListTable users={filteredList} />
+				</div>
+			)}
+		</React.Fragment>
 	)
 }
 

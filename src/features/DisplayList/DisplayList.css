@@ -1,0 +1,27 @@
+.DisplayList-wrapper {
+    text-align: left;
+    padding-bottom: 10vmin;
+}
+.DisplayListSearch {
+    border: 1px solid #cccccc;
+    margin-bottom: 32px;
+    padding: 6px 8px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+.DisplayListSearch:hover, .DisplayListSearch:active {
+    border: 1px solid #1362AE;
+}
+.DisplayListTable {
+    text-align: left;
+    width:100%;
+    line-height: 1.5;
+}
+.DisplayListTable thead {
+    background-color: #CDE1F9;
+    font-weight: bold;
+    border-bottom: 1px solid #1362AE;
+}
+.DisplayListTable td, .DisplayListTable th  {
+    padding: 4px 6px;
+}

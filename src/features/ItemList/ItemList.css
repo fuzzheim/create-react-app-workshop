@@ -1,0 +1,10 @@
+.ItemList-wrapper {
+    margin: 0 auto;
+    max-width: 500px;
+    border: 2px solid #1362ae;
+    padding: 20px;
+}
+
+.ItemList-ul {
+    text-align: left;
+}

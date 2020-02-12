@@ -1,11 +1,3 @@
-export interface IDisplayListData {
-	id: number
-	name: string
-	username: string
-	email: string
-	address: any
-}
-
 export const DISPLAY_LIST_DATA = [
 	{
 		id: 1,
@@ -238,5 +230,3 @@ export const DISPLAY_LIST_DATA = [
 		}
 	}
 ]
-
-export default DISPLAY_LIST_DATA

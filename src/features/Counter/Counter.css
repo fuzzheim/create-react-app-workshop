@@ -1,0 +1,72 @@
+.Counter-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+}
+.Counter-toggle {
+    position: absolute;
+    bottom: 12px;
+    right: 26px;
+}
+.Counter-number {
+    width: 100%;
+    color: #1362ae;
+    font-size: 92px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+@media (prefers-reduced-motion: no-preference) {
+    .Counter-number {
+      animation: Counter-change 420ms ease-in-out;
+    }
+  }
+.Counter-button {
+    padding: 1em 2em;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1362ae;
+    border: 0px solid transparent;
+    color: #ffffff;
+    margin:16px;
+  }
+  .Counter-button:hover, .Counter-button:focus {
+    background-color: #111111;
+  }
+  .Counter-button:active {
+    background-color: #093E61;
+  }
+  .Counter-button:disabled {
+    background-color: #cccccc;
+  }
+
+  .Toggle-button {
+    padding: 1em 2em;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #592E38;
+    border: 0px solid transparent;
+    color: #ffffff;
+    margin:16px;
+  }
+  .Toggle-button:hover, .Toggle-button:focus {
+    background-color: #111111;
+  }
+  .Toggle-button:active {
+    background-color: #A82E39;
+  }
+
+@keyframes Counter-change {
+    0% {
+        color: #1362ae;
+    }
+    50% {
+        color: #093E61;
+    }
+    100% {
+        color: #1362ae;
+    }
+  }

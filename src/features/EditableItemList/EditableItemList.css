@@ -1,0 +1,56 @@
+.EditableItemList-wrapper {
+    margin: 0 auto;
+    max-width: 260px;
+    border: 2px solid #1362ae;
+    padding: 20px 20px 40px;
+    margin-top: 10vmin;
+}
+.EditableItemList-label {
+    display: block;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+.EditableItemList-input {
+    padding: 8px 12px;
+    font-size: 18px;
+    border:1px solid #cccccc;   
+    text-align: left;
+    margin-bottom: 12px;
+    width: 100%;
+}
+.EditableItemList-input:hover, .EditableItemList-input:focus, .EditableItemList-input:active {
+    border:1px solid #1362ae;   
+}
+.EditableItemList-ul {
+    text-align: left;
+    margin: 0;
+    padding-left: 18px;
+}
+.EditableItemList-li {
+    position: relative;
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+.EditableItemList-editable {
+    border: 0px solid transparent;
+    border-bottom: 1px solid transparent;
+    font-size: 16px;
+    display: inline-block;
+}
+.EditableItemList-editable:hover {
+    border-bottom: 1px solid #1362ae;
+}
+.EditableItemList-delete {
+    position: absolute;
+    right: 0;
+    border: 0px solid transparent;
+    background-color: transparent;
+    display: inline-block;
+    color: #1362ae;
+    font-weight: bold;
+    font-size: 18px;
+}
+.EditableItemList-delete:hover {
+    color: red;
+}
